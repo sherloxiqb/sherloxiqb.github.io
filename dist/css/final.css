@@ -549,6 +549,10 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(30 41 59 / var(--tw-bg-opacity));
 }
+.bg-slate-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(71 85 105 / var(--tw-bg-opacity));
+}
 .bg-slate-200 {
   --tw-bg-opacity: 1;
   background-color: rgb(226 232 240 / var(--tw-bg-opacity));
@@ -746,6 +750,12 @@ body {
 h1 {
   font-family: Playfair Display, sans-serif;
 }
+h2 {
+  font-family: Playfair Display, sans-serif;
+}
+h4 {
+  font-family: Playfair Display, sans-serif;
+}
 .navbar-fixed {
   position: fixed;
   z-index: 9999;
@@ -872,6 +882,10 @@ h1 {
   --tw-bg-opacity: 1;
   background-color: rgb(30 41 59 / var(--tw-bg-opacity));
 }
+.dark .dark\:bg-slate-600 {
+      --tw-bg-opacity: 1;
+      background-color: rgb(71 85 105 / var(--tw-bg-opacity));
+    }
 .dark .dark\:bg-slate-300 {
   --tw-bg-opacity: 1;
   background-color: rgb(203 213 225 / var(--tw-bg-opacity));
@@ -914,6 +928,9 @@ h1 {
     font-size: 1.125rem;
     line-height: 1.75rem;
   }
+  .md\:text-2xl {
+      font-size: 1.5rem;
+      line-height: 2rem;
 }
 @media (min-width: 1024px) {
   .lg\:static {
