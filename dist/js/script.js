@@ -52,3 +52,52 @@ if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.match
 } else {
   darkToggle.checked = false;
 }
+
+// Carousel Portfolio
+var sliderContainer = document.getElementById('sliderContainer');
+var slider = document.getElementById('slider');
+var cards = slider.getElementsByTagName('li');
+
+var elementsToShow = 3;
+if (document.body.clientWidth < 1000) {
+  elementsToShow = 1;
+} else if (document.body.clientWidth < 1500) {
+  elementsToShow = 2;
+}
+
+var sliderContainerWidth = sliderContainer.clientWidth;
+
+var cardWidth = sliderContainerWidth / elementsToShow;
+
+slider.style.width = cards.length * cardWidth + 'px';
+slider.style.transition = 'margin';
+slider.style.transitionDuration = '1s';
+
+for (var index = 0; index < cards.length; index++) {
+  const element = cards[index];
+  element.style.width = cardWidth + 'px';
+}
+
+function next() {
+  if (+slider.style.marginLeft.slice(0, -2) != -cardWidth * (cards.length - elementsToShow)) slider.style.marginLeft = +slider.style.marginLeft.slice(0, -2) - cardWidth + 'px';
+}
+
+function prev() {
+  if (+slider.style.marginLeft.slice(0, -2) != 0) slider.style.marginLeft = +slider.style.marginLeft.slice(0, -2) + cardWidth + 'px';
+}
+
+function autoPlay() {
+  prev();
+
+  if (+slider.style.marginLeft.slice(0, -2) === -cardWidth * (cards.length - elementsToShow)) {
+    slider.style.marginLeft = '0px';
+  }
+
+  setTimeout(() => {
+    autoPlay();
+  }, 3000);
+}
+
+setTimeout(() => {
+  autoPlay();
+}, 3000);
